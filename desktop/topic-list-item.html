@@ -1,3 +1,5 @@
+<script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
+
 {{#if bulkSelectEnabled}}
   <td class="bulk-select">
     <input type="checkbox" class="bulk-select">
@@ -73,3 +75,23 @@
 <td class="num views {{topic.viewsHeat}}">{{number topic.views numberKey="views_long"}}</td>
 
 {{raw "list/activity-column" topic=topic class="num" tagName="td"}}
+</script>
+
+<script>
+
+(function(){
+
+var TopicListItemView = require('discourse/components/topic-list-item').default;
+
+
+TopicListItemView.reopen({
+    showCategory: function(){
+        return !this.get('controller.hideCategory') &&
+                this.get('topic.creator') &&
+                this.get('topic.category.name') !== 'uncategorized';
+    }.property()
+});
+
+})();
+
+</script>
