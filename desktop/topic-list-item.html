@@ -11,6 +11,9 @@
   This causes the topic-post-badge to be considered the same word as "text"
   at the end of the link, preventing it from line wrapping onto its own line.
 --}}
+<td class='poster-author'>
+    <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
+</td>
 <td class='main-link clearfix' colspan="1">
   <span class='link-top-line'>
     {{~raw-plugin-outlet name="topic-list-before-status"}}
