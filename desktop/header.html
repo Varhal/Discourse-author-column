@@ -15,12 +15,7 @@
 --}}
 <td class='author-avatar'>
 <div class='poster-avatar'>
-  {{#each posters as |poster|}}
-    {{#if poster.moreCount}}
-    {{else}}
-      <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
-    {{/if}}
-  {{/each}}
+  <a href="{{topic.lastPostUr}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPoster usernamePath="username" imageSize="medium"}}</a>
   </div>
 </td>
 <td class='main-link clearfix' colspan="1">
