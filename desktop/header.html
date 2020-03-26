@@ -15,8 +15,13 @@
 --}}
 <td class='author-avatar'>
 <div class='poster-avatar'>
-    <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
-</div>
+  {{#each posters as |poster|}}
+    {{#if poster.moreCount}}
+    {{else}}
+      <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
+    {{/if}}
+  {{/each}}
+  </div>
 </td>
 <td class='main-link clearfix' colspan="1">
   <span class='link-top-line'>
